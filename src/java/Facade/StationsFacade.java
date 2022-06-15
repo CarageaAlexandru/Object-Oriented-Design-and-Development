@@ -36,8 +36,8 @@ public class StationsFacade {
             ResultSet result = statement.executeQuery("SELECT * FROM stations");
             while(result.next())
             {
-                Station s = new Station(result.getString("station_name"), result.getInt("station_id"), result.getInt("zone"));
-                stations.add(s);
+                Station station = new Station(result.getString("station_name"), result.getInt("station_id"), result.getInt("zone"));
+                stations.add(station);
             }
             return stations;
         }
